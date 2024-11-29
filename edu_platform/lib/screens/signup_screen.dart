@@ -10,4 +10,12 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  Future<void> signup() {
+    final response = await http.post(
+      Uri.parse('https://your-backend-api.com/api/auth/signup'),
+      headers: {"Content-Type": "application/json"},
+      body: json
+    )
+  }
 }
